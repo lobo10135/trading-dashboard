@@ -1,11 +1,18 @@
-# app.py
 import streamlit as st
-from strategies import lunch, gap, rsl, hit  # 1. Hinzufügen des Imports
+from strategies import lunch, gap, rsl, hit
 
-st.set_page_config(page_title="Trading Dashboard", page_icon="📈")
+st.set_page_config(page_title="Trading Dashboard", page_icon="📈", layout="wide")
+
+st.markdown("""
+    <style>
+    .stApp { text-align: center; }
+    h1, h2, h3 { text-align: center; }
+    div.stButton > button { margin: 0 auto; display: block; }
+    </style>
+""", unsafe_allow_html=True)
+
 st.title("📈 Trading Dashboard")
 
-# 2. Menüpunkt hinzufügen
 option = st.sidebar.selectbox("Strategie", [
     "GBP Lunch Time", 
     "Gap and Go weekly", 
@@ -13,7 +20,6 @@ option = st.sidebar.selectbox("Strategie", [
     "Hit and Run"
 ])
 
-# 3. Logik erweitern
 if option == "GBP Lunch Time":
     lunch.run()
 elif option == "Gap and Go weekly":
