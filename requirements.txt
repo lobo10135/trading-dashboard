@@ -1,4 +1,3 @@
-pip>=26.1.2
 streamlit
 yfinance
 pandas
@@ -7,4 +6,3 @@ fpdf
 requests
 lxml
 pandas-ta
-rich
