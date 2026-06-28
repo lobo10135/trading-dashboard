@@ -1,22 +1,9 @@
 import streamlit as st
 import yfinance as yf
 import pandas as pd
-import pandas_ta as ta
 import time
 import requests
 from lxml import html
-
-st.set_page_config(page_title="Hit and Run Scanner", layout="wide")
-
-# CSS für die vollständige Zentrierung
-st.markdown("""
-    <style>
-    .stApp { text-align: center; }
-    h1, h2, h3 { text-align: center; }
-    .stProgress { max-width: 500px; margin: 0 auto; }
-    div.stButton > button { margin: 0 auto; display: block; }
-    </style>
-""", unsafe_allow_html=True)
 
 @st.cache_data(ttl=86400)
 def get_sp500_data():
@@ -29,7 +16,6 @@ def get_sp500_data():
         data = []
         for row in table.xpath('.//tr')[1:]:
             cells = row.xpath('.//td')
-            # Index 0: Ticker, Index 1: Name, Index 3: Sektor
             data.append({
                 "Ticker": cells[0].text_content().strip(), 
                 "Wert": cells[1].text_content().strip(),
@@ -40,6 +26,8 @@ def get_sp500_data():
 
 def analyze_ticker(ticker, mode="long"):
     try:
+        # Import innerhalb der Funktion, um Abhängigkeiten zu isolieren
+        import pandas_ta as ta
         stock = yf.Ticker(ticker)
         df = stock.history(period="3mo", auto_adjust=True)
         if len(df) < 60: return None
@@ -63,18 +51,14 @@ def analyze_ticker(ticker, mode="long"):
         return {"ADX": round(current_adx, 2), "Price": round(current_price, 2), "GD10": "🟢", "GD50": "🟢", col_name: "🟢"}
     except: return None
 
-# Helper für die Spaltenkonfiguration und Anzeige
 def display_results(results, title, icon):
     st.subheader(f"{icon} {title}")
     if results:
         df = pd.DataFrame(results).sort_values("ADX", ascending=False)
-        # Sicherstellen der Reihenfolge: Ticker, Wert, Sektor, dann der Rest
         cols = ["Ticker", "Wert", "Sektor", "ADX", "Price", "GD10", "GD50"]
-        # Die Spalte "2 month High" oder "2 month Low" dynamisch finden
         last_col = [c for c in df.columns if "2 month" in c][0]
         cols.append(last_col)
         df = df[cols]
-        
         col_config = {
             "GD10": st.column_config.TextColumn("GD10", alignment="right"),
             "GD50": st.column_config.TextColumn("GD50", alignment="right"),
@@ -84,26 +68,27 @@ def display_results(results, title, icon):
     else:
         st.warning("Keine Treffer gefunden.")
 
-st.title("🚀 Hit and Run Scanner")
-st.write("Zeigt nur Aktien mit ADX > 30, Preis > 30 und voll erfüllten Trend-Bedingungen.")
+def run():
+    st.title("🚀 Hit and Run Scanner")
+    st.write("Zeigt nur Aktien mit ADX > 30, Preis > 30 und voll erfüllten Trend-Bedingungen.")
 
-if st.button("Scan starten"):
-    sp_data = get_sp500_data()
-    long_results, short_results = [], []
-    progress_bar = st.progress(0)
-    status_text = st.empty()
-    
-    for i, item in enumerate(sp_data):
-        t_clean = item['Ticker'].replace('.', '-')
-        res_long = analyze_ticker(t_clean, mode="long")
-        if res_long: long_results.append({**item, **res_long})
-        res_short = analyze_ticker(t_clean, mode="short")
-        if res_short: short_results.append({**item, **res_short})
-        progress_bar.progress((i + 1) / len(sp_data))
-        status_text.text(f"Analysiere: {item['Ticker']}")
-        time.sleep(0.05)
+    if st.button("Scan starten"):
+        sp_data = get_sp500_data()
+        long_results, short_results = [], []
+        progress_bar = st.progress(0)
+        status_text = st.empty()
         
-    status_text.empty(); progress_bar.empty()
-    display_results(long_results, "Long-Treffer", "🟢")
-    st.write("<br><br><br><br>", unsafe_allow_html=True)
-    display_results(short_results, "Short-Treffer", "🔴")
+        for i, item in enumerate(sp_data):
+            t_clean = item['Ticker'].replace('.', '-')
+            res_long = analyze_ticker(t_clean, mode="long")
+            if res_long: long_results.append({**item, **res_long})
+            res_short = analyze_ticker(t_clean, mode="short")
+            if res_short: short_results.append({**item, **res_short})
+            progress_bar.progress((i + 1) / len(sp_data))
+            status_text.text(f"Analysiere: {item['Ticker']}")
+            time.sleep(0.02) # Leicht reduziert für besseren Flow
+            
+        status_text.empty(); progress_bar.empty()
+        display_results(long_results, "Long-Treffer", "🟢")
+        st.write("<br><br>", unsafe_allow_html=True)
+        display_results(short_results, "Short-Treffer", "🔴")
