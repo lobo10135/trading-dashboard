@@ -5,5 +5,5 @@ beautifulsoup4
 fpdf
 requests
 lxml
-pandas-ta
+git+https://github.com/twopirllc/pandas-ta.git@development
 streamlit
