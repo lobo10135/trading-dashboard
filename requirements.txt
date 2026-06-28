@@ -1,9 +1,8 @@
-pandas>=2.0.0
-numpy
+streamlit
 yfinance
+pandas
 beautifulsoup4
 fpdf
 requests
 lxml
-git+https://github.com/twopirllc/pandas-ta.git@development
-streamlit
+pandas-ta
