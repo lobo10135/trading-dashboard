@@ -1,17 +1,10 @@
 import streamlit as st
-from strategies import lunch, gap, rsl, hit
+# Importiere die Module
+from strategies import lunch, gap, rsl, hit 
 
 st.set_page_config(page_title="Trading Dashboard", page_icon="📈", layout="wide")
 
-st.markdown("""
-    <style>
-    .stApp { text-align: center; }
-    h1, h2, h3 { text-align: center; }
-    div.stButton > button { margin: 0 auto; display: block; }
-    </style>
-""", unsafe_allow_html=True)
-
-st.title("📈 Trading Dashboard")
+# ... CSS ...
 
 option = st.sidebar.selectbox("Strategie", [
     "GBP Lunch Time", 
@@ -20,11 +13,16 @@ option = st.sidebar.selectbox("Strategie", [
     "Hit and Run"
 ])
 
+# Hier rufst du jetzt die FUNKTIONSNAMEN auf, die du in den Dateien hast
 if option == "GBP Lunch Time":
-    lunch.run()
+    lunch.check_gbp_lunch_momentum() # <-- Hier den alten Namen einfügen!
+
 elif option == "Gap and Go weekly":
-    gap.run()
+    # Hier müsstest du schauen, wie die Funktion in gap.py heißt
+    gap.check_weekend_gap(...) 
+
 elif option == "RSL Analyse S&P 500":
-    rsl.run()
+    rsl.calculate_rsl_26_weeks() # <-- Hier den alten Namen einfügen!
+
 elif option == "Hit and Run":
-    hit.run()
+    hit.run() # Das war die einzige neue, die wir so definiert hatten
