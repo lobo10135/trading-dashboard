@@ -1,6 +1,6 @@
 streamlit
 yfinance
-pandas_ta
+pandas
 beautifulsoup4
 fpdf
 requests
