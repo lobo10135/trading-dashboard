@@ -5,3 +5,4 @@ beautifulsoup4
 fpdf
 requests
 lxml
+pandas_ta
