@@ -4,3 +4,4 @@ yfinance
 pandas-ta
 lxml
 requests
+fpdf
