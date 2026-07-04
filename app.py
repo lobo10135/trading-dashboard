@@ -20,7 +20,7 @@ st.markdown("""
 Wähle in der linken Seitenleiste eine Strategie aus, um die Analyse zu starten.
 
 <ul style="list-style-type: disc; color: #FFD700;">
-    <li><b>01 GBP Lunch Time (Einstieg 13 Uhr, bei TP die Position um 75% reduzieren und Stopp= Einstand.)</b></li>
+    <li><b>01 GBP Lunch Time (Einstieg 13 Uhr, bei TP die Position um 75% reduzieren und Stop= Einstand.)</b></li>
     <li><b>02 Gap and Go (Einstieg am Montag zur Handelseröffnung)</b></li>
     <li><b>03 RSL Analyse</b></li>
     <li><b>04 Hit and Run</b></li>
