@@ -5,6 +5,5 @@ lxml
 requests
 fpdf
 pillow
-# Wir erzwingen eine ältere numba-Version, die stabiler ist
-numba==0.60.0
+# pandas-ta wird jetzt ohne numba-Erzwingung installiert
 pandas-ta
