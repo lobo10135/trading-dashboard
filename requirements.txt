@@ -1,9 +1,9 @@
 streamlit>=1.35.0
-pandas>=2.0.0
+pandas>=2.0.0,<3.0.0
+numpy>=1.23.0,<2.0.0
 yfinance
 lxml
 requests
 fpdf
 pillow
-# pandas-ta wird jetzt ohne numba-Erzwingung installiert
-pandas-ta
+# pandas-ta weglassen, bis das System stabil läuft
