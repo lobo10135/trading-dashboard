@@ -1,7 +1,6 @@
 streamlit>=1.35.0
-pandas>=2.0.0,<2.2.0
-yfinance
 pandas-ta
+yfinance
 lxml
 requests
 fpdf
