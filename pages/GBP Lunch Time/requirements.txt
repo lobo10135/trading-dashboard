@@ -1,8 +1,7 @@
 streamlit
 pandas
 yfinance
-pytz
+pandas-ta
 lxml
 requests
 fpdf
-pillow
