@@ -1,1 +1,1 @@
-yfinance
+yfinance --no-cache-dir
