@@ -6,4 +6,4 @@ lxml
 requests
 fpdf
 pillow
-# pandas-ta weglassen, bis das System stabil läuft
+pandas_ta
