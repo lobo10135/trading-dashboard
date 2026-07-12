@@ -6,4 +6,4 @@ lxml
 requests
 fpdf
 pillow
-pandas_ta
+pandas_ta --no-deps
