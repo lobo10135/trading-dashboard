@@ -1,2 +1,2 @@
-yfinance --no-cache-dir
-pytz
+yfinance --no-cache-dir --no-deps
+pytz --no-cache-dir --no-deps
