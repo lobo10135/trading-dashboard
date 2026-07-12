@@ -1,2 +1,3 @@
-yfinance --no-cache-dir --no-deps
-pytz --no-cache-dir --no-deps
+streamlit
+yfinance
+pytz
