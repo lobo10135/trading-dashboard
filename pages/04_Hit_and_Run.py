@@ -1,7 +1,11 @@
 import streamlit as st
 import yfinance as yf
 import pandas as pd
-import pandas_ta as ta
+try:
+    import pandas_ta as ta
+except ImportError:
+    ta = None
+    st.warning("Hinweis: pandas_ta konnte nicht geladen werden.")
 import time
 import requests
 from lxml import html
