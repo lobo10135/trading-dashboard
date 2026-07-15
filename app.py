@@ -17,8 +17,8 @@ st.write("Wähle eine Strategie aus:")
 
 with st.sidebar:
     st.title("Strategien")
-    st.markdown("[01 GBP Lunch Time](https://lunchtime.app)")
-    st.markdown("[02 Gap and Go](https://gapandgo.app)")
+    st.markdown("[01 GBP Lunch Time](https://lunchtime.streamlit.app)")
+    st.markdown("[02 Gap and Go](https://gapandgo.streamlit.app)")
     st.markdown("[03 RSL Analyse](https://deinname-rsl.streamlit.app)")
 
 # Dein HTML-Block bleibt erhalten
