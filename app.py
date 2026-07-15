@@ -3,32 +3,21 @@ import streamlit as st
 # Konfiguration
 st.set_page_config(page_title="Trading Dashboard", page_icon="📈", layout="centered")
 
-# CSS für den Sidebar-Look
-st.markdown("""
-    <style>
-    [data-testid="stSidebar"] { background-color: #F0F2F6; }
-    .sidebar-link {
-        display: block;
-        padding: 10px;
-        color: #31333F;
-        text-decoration: none;
-        border-bottom: 1px solid #E6E9EF;
-        font-weight: 500;
-        transition: color 0.2s;
-    }
-    .sidebar-link:hover { color: #FF4B4B; }
-    </style>
-""", unsafe_allow_html=True)
-
-# SIDEBAR
+# SIDEBAR - Komplett ohne CSS-Injection, nur native Streamlit-Elemente
 with st.sidebar:
-    st.title("Navigation")
-    # Alle Links verwenden jetzt konsistent die Klasse "sidebar-link"
-    st.markdown('<a href="https://lunchtime.streamlit.app" class="sidebar-link">01 GBP Lunch Time</a>', unsafe_allow_html=True)
-    st.markdown('<a href="https://gapandgo.streamlit.app" class="sidebar-link">02 Gap and Go</a>', unsafe_allow_html=True)
-    st.markdown('<a href="https://dein-rsl-url.streamlit.app" class="sidebar-link">03 RSL Analyse</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#" class="sidebar-link">04 Hit and Run</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#" class="sidebar-link">05 Viper Strike</a>', unsafe_allow_html=True)
+    st.title("Strategie auswählen")
+    
+    # Nutzung von st.link_button für den nativen Look
+    if st.link_button("01 GBP Lunch Time", "https://lunchtime.streamlit.app", use_container_width=True):
+        pass
+    if st.link_button("02 Gap and Go", "https://gapandgo.streamlit.app", use_container_width=True):
+        pass
+    if st.link_button("03 RSL Analyse", "https://dein-rsl-url.streamlit.app", use_container_width=True):
+        pass
+    if st.link_button("04 Hit and Run", "#", use_container_width=True):
+        pass
+    if st.link_button("05 Viper Strike", "#", use_container_width=True):
+        pass
 
 # HAUPTINHALT
 st.image("bulle.jpg", use_container_width=True)
