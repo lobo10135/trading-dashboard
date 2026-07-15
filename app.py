@@ -3,7 +3,7 @@ import streamlit as st
 # Konfiguration
 st.set_page_config(page_title="Trading Dashboard", page_icon="📈", layout="centered")
 
-# CSS für den Sidebar-Look (Rot beim Hovern, saubere Trennung)
+# CSS für den Sidebar-Look
 st.markdown("""
     <style>
     [data-testid="stSidebar"] { background-color: #F0F2F6; }
@@ -20,11 +20,12 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# SIDEBAR (Wie dein altes Menü)
+# SIDEBAR
 with st.sidebar:
     st.title("Navigation")
-    st.markdown('<a href="https://lunchtime.streamlit.app" class="sidebar-link">GBP Lunch Time</a>', unsafe_allow_html=True)
-    st.markdown('<a href="https://gapandgo.streamlit.app">02 Gap and Go</a>', unsafe_allow_html=True)
+    # Alle Links verwenden jetzt konsistent die Klasse "sidebar-link"
+    st.markdown('<a href="https://lunchtime.streamlit.app" class="sidebar-link">01 GBP Lunch Time</a>', unsafe_allow_html=True)
+    st.markdown('<a href="https://gapandgo.streamlit.app" class="sidebar-link">02 Gap and Go</a>', unsafe_allow_html=True)
     st.markdown('<a href="https://dein-rsl-url.streamlit.app" class="sidebar-link">03 RSL Analyse</a>', unsafe_allow_html=True)
     st.markdown('<a href="#" class="sidebar-link">04 Hit and Run</a>', unsafe_allow_html=True)
     st.markdown('<a href="#" class="sidebar-link">05 Viper Strike</a>', unsafe_allow_html=True)
