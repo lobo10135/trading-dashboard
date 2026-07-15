@@ -9,19 +9,19 @@ with st.sidebar:
     # Links im nativen Stil: keine Unterstreichung, keine Button-Kästen
     st.markdown("""
         <div style="margin-bottom: 15px;">
-            <a href="https://lunchtime.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">01 GBP Lunch Time</a>
+            <a href="https://lunchtime.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">GBP Lunch Time</a>
         </div>
         <div style="margin-bottom: 15px;">
-            <a href="https://gapandgo.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">02 Gap and Go</a>
+            <a href="https://gapandgo.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Gap and Go</a>
         </div>
         <div style="margin-bottom: 15px;">
-            <a href="https://dein-rsl-url.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">03 RSL Analyse</a>
+            <a href="https://rslstrategie.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">RSL Analyse</a>
         </div>
         <div style="margin-bottom: 15px;">
-            <a href="#" style="text-decoration: none; color: inherit; font-size: 14px;">04 Hit and Run</a>
+            <a href="#" style="text-decoration: none; color: inherit; font-size: 14px;">Hit and Run</a>
         </div>
         <div style="margin-bottom: 15px;">
-            <a href="#" style="text-decoration: none; color: inherit; font-size: 14px;">05 Viper Strike</a>
+            <a href="#" style="text-decoration: none; color: inherit; font-size: 14px;">Viper Strike</a>
         </div>
     """, unsafe_allow_html=True)
 
@@ -33,10 +33,10 @@ st.write("Wähle links eine Strategie aus, um fortzufahren.")
 
 st.markdown("""
 <ul style="list-style-type: disc; color: #FFD700;">
-    <li><b>01 GBP Lunch Time</b></li>
-    <li><b>02 Gap and Go</b></li>
-    <li><b>03 RSL Analyse</b></li>
-    <li><b>04 Hit and Run</b></li>
-    <li><b>05 Viper Strike</b></li>
+    <li><b>GBP Lunch Time</b></li>
+    <li><b>Gap and Go</b></li>
+    <li><b>RSL Analyse</b></li>
+    <li><b>Hit and Run</b></li>
+    <li><b>Viper Strike</b></li>
 </ul>
 """, unsafe_allow_html=True)
