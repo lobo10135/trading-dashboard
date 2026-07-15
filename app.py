@@ -23,6 +23,10 @@ with st.sidebar:
         <div style="margin-bottom: 15px;">
             <a href="https://viperstrike.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Viper Strike</a>
         </div>
+        <div style="margin-bottom: 15px;">
+            <a href="https://watchlistperfect.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Watchlist</a>
+        </div>
+        
     """, unsafe_allow_html=True)
 
 # HAUPTINHALT
@@ -38,5 +42,6 @@ st.markdown("""
     <li><b>RSL Analyse</b></li>
     <li><b>Hit and Run</b></li>
     <li><b>Viper Strike</b></li>
+    <li><b>Watchlist</b></li>
 </ul>
 """, unsafe_allow_html=True)
