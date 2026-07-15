@@ -3,21 +3,17 @@ import streamlit as st
 # Konfiguration
 st.set_page_config(page_title="Trading Dashboard", page_icon="📈", layout="centered")
 
-# SIDEBAR - Komplett ohne CSS-Injection, nur native Streamlit-Elemente
+# SIDEBAR - Ohne CSS-Injection, Nutzung von nativem Markdown
 with st.sidebar:
     st.title("Strategie auswählen")
     
-    # Nutzung von st.link_button für den nativen Look
-    if st.link_button("01 GBP Lunch Time", "https://lunchtime.streamlit.app", use_container_width=True):
-        pass
-    if st.link_button("02 Gap and Go", "https://gapandgo.streamlit.app", use_container_width=True):
-        pass
-    if st.link_button("03 RSL Analyse", "https://dein-rsl-url.streamlit.app", use_container_width=True):
-        pass
-    if st.link_button("04 Hit and Run", "#", use_container_width=True):
-        pass
-    if st.link_button("05 Viper Strike", "#", use_container_width=True):
-        pass
+    # Markdown-Links sind nativ linksbündig, haben die Standardschriftgröße 
+    # und keinen Button-Kasten drumherum.
+    st.markdown("[01 GBP Lunch Time](https://lunchtime.streamlit.app)")
+    st.markdown("[02 Gap and Go](https://gapandgo.streamlit.app)")
+    st.markdown("[03 RSL Analyse](https://dein-rsl-url.streamlit.app)")
+    st.markdown("[04 Hit and Run](#)")
+    st.markdown("[05 Viper Strike](#)")
 
 # HAUPTINHALT
 st.image("bulle.jpg", use_container_width=True)
