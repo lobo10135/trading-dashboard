@@ -18,10 +18,10 @@ with st.sidebar:
             <a href="https://rslstrategie.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">RSL Analyse</a>
         </div>
         <div style="margin-bottom: 15px;">
-            <a href="#" style="text-decoration: none; color: inherit; font-size: 14px;">Hit and Run</a>
+            <a href="https://hitandrun.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Hit and Run</a>
         </div>
         <div style="margin-bottom: 15px;">
-            <a href="#" style="text-decoration: none; color: inherit; font-size: 14px;">Viper Strike</a>
+            <a href="https://viperstrike.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Viper Strike</a>
         </div>
     """, unsafe_allow_html=True)
 
