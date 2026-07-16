@@ -37,8 +37,8 @@ st.write("Wähle links eine Strategie aus, um fortzufahren.")
 
 st.markdown("""
 <ul style="list-style-type: disc; color: #FFD700;">
-    <li><b>GBP Lunch Time</b></li>
-    <li><b>Gap and Go</b></li>
+    <li><b>GBP Lunch Time (Einstieg 13 Uhr, bei TP die Position um 75% reduzieren und Stop= Einstand.)</b></li>
+    <li><b>Gap and Go (Einstieg am Montag zur Handelseröffnung)</b></li>
     <li><b>RSL Analyse</b></li>
     <li><b>Hit and Run</b></li>
     <li><b>Viper Strike</b></li>
