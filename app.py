@@ -26,6 +26,12 @@ with st.sidebar:
         <div style="margin-bottom: 15px;">
             <a href="https://watchlistperfect.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Watchlist</a>
         </div>
+        <div style="margin-bottom: 15px;">
+            <a href="https://swing07.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Watchlist</a>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <a href="https://breakout08.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Watchlist</a>
+        </div>
         
     """, unsafe_allow_html=True)
 
@@ -43,5 +49,7 @@ st.markdown("""
     <li><b>Hit and Run</b></li>
     <li><b>Viper Strike</b></li>
     <li><b>Watchlist</b></li>
+    <li><b>Swing weekly</b></li>
+    <li><b>Breakout weekly</b></li>
 </ul>
 """, unsafe_allow_html=True)
