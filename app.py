@@ -37,7 +37,10 @@ with st.sidebar:
         </div>
         <div style="margin-bottom: 15px;">
             <a href="https://180weekly.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">180`s weekly</a>
-        </div>        
+        </div>      
+        <div style="margin-bottom: 15px;">
+            <a href="https://dojistrategie.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Doji weekly</a>
+        </div>             
         
     """, unsafe_allow_html=True)
 
@@ -58,6 +61,7 @@ st.markdown("""
     <li><b>Swing weekly</b></li>
     <li><b>Breakout weekly</b></li>
     <li><b>180</b></li>
-    <li><b>180`s weekly</b></li>    
+    <li><b>180`s weekly</b></li>
+    <li><b>Doji weekly</b></li>    
 </ul>
 """, unsafe_allow_html=True)
