@@ -47,6 +47,9 @@ with st.sidebar:
         <div style="margin-bottom: 15px;">
             <a href="https://daxover.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">Dax Overnight</a>
         </div>
+        <div style="margin-bottom: 15px;">
+            <a href="https://kijunsen.streamlit.app" style="text-decoration: none; color: inherit; font-size: 14px;">4H Momentum</a>
+        </div>        
         
     """, unsafe_allow_html=True)
 
@@ -71,5 +74,6 @@ st.markdown("""
     <li><b>Doji weekly</b></li>
     <li><b>200 weekly</b></li>
     <li><b>Dax Overnight</b></li>
+    <li><b>4H Momentum</b></li>
 </ul>
 """, unsafe_allow_html=True)
